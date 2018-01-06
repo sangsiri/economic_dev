@@ -5,7 +5,7 @@
     $server = $url["us-cdbr-iron-east-05.cleardb.net"]; 
     $username = $url["bd1c9315fec3c7"];
     $password = $url["f39983bf"];
-    $db = substr($url["path"], 1);
+    $db = substr($url["heroku_2de0919e7368dd7"], 1);
 
     $conn = new mysqli($server, $username, $password, $db);
 

@@ -4,8 +4,11 @@
     include 'line-bot.php';
 
     $bot = new BOT_API($channelSecret, $access_token);
-    if (!empty($bot->isEvents)) {
-        $bot->sendMessageNew($user_id, 'ทดสอบ');
+    $mess= $_REQUEST['mess'];
+    echo $mess;
+    $bot->sendMessageNew($user_id,  $mess);
+
+    /*if (!empty($bot->isEvents)) {
         $bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
         if ($bot->isSuccess()) {
             echo 'Succeeded!';
@@ -16,4 +19,4 @@
         echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
         exit();
     
-    }
+    }*/

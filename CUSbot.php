@@ -1,5 +1,5 @@
 <?php
-    include (CUSbotConn.php);
+    //include (CUSbotConn.php);
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON

@@ -1,5 +1,7 @@
 <?php
     include ('CUSbotConn.php');
+    include ('line-bot.php');
+
     $bot = new BOT_API($channelSecret, $access_token);
 	
     if (!empty($bot->isEvents)) {

@@ -6,16 +6,13 @@
     $events = json_decode($content, true);
     $event = $events['events'] ;
         $mess = $_GET["mess"];
-        echo $mess;
         // Get text sent
-        $text = $mess;
         // Get replyToken
         $replyToken = $event['replyToken'];
-
         // Build message to reply back
         $messages = [
             'type' => 'text',
-            'text' => $text
+            'text' =>  $mess
         ];
 
         // Make a POST Request to Messaging API to reply to sender

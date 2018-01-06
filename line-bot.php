@@ -1,5 +1,5 @@
 <?php
-    include '\vendor\autoload.php';
+
 
     use \LINE\LINEBot;
     use \LINE\LINEBot\HTTPClient;

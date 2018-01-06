@@ -1,7 +1,7 @@
 <?php
 
-require_once '\vendor\autoload.php';
-require_once 'CUSbotConn.php';// Get POST body content
+include '\vendor\autoload.php';
+include 'CUSbotConn.php';// Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);

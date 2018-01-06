@@ -6,10 +6,6 @@
     $bot = new BOT_API($channelSecret, $access_token);
     $mess= $_REQUEST['mess'];
 
-    if($mess==""){
-        echo 'กรุณากรอกข้อความด้วย' ;
-        exit();
-    }
     $bot->sendMessageNew($user_id,  $mess);
 
     if ($bot->isSuccess()) {

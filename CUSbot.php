@@ -1,5 +1,5 @@
 <?php
-    include 'CUSbotConn.php';
+    require_once 'CUSbotConn.php';
     require_once '/vendor/autoload.php';
     $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
     $response = $bot->replyMessage('123456', $textMessageBuilder);
@@ -8,4 +8,4 @@
         return; 
     }
 // Failed
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+//echo $response->getHTTPStatus() . ' ' . $response->getRawBody();

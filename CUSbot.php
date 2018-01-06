@@ -1,6 +1,5 @@
 <?php
-    require_once "CUSbotConn.php";
-
+    include (CUSbotConn.php);
     if (!empty($bot->isEvents)) {
 		
         $bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
@@ -15,5 +14,5 @@
         exit();
     
     }
-    
+
 ?>

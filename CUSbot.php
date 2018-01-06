@@ -1,5 +1,5 @@
 <?php
-echo "test" ;
+
 require_once 'CUSbotConn.php';
 require_once '\vendor\autoload.php';
 

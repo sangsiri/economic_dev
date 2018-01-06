@@ -4,7 +4,7 @@
     include 'line-bot.php';
 
     $bot = new BOT_API($channelSecret, $access_token);
-    $bot->sendMessageNew('$user_id', 'ทอสอบ');
+    $bot->sendMessageNew($user_id, 'ทอสอบ');
     /*if (!empty($bot->isEvents)) {
             
         $bot->replyMessageNew($bot->replyToken, json_encode($bot->message));

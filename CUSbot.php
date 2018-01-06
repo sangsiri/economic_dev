@@ -1,22 +1,18 @@
 <?php
 
-include '\vendor\autoload.php';
-include 'CUSbotConn.php';// Get POST body content
-$content = file_get_contents('php://input');
-// Parse JSON
-$events = json_decode($content, true);
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-            $response = $bot->replyText($replyToken, 'hello!');
-		}
+$bot = new BOT_API($channelSecret, $access_token);
+	
+if (!empty($bot->isEvents)) {
+		
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
+
+	if ($bot->isSuccess()) {
+		echo 'Succeeded!';
+		exit();
 	}
+
+	// Failed
+	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+	exit();
+
 }
-echo "OK";

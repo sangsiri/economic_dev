@@ -5,7 +5,7 @@
     // Parse JSON
     $events = json_decode($content, true);
     $event = $events['events'] ;
-        $mess = $_REQUEST['mess'];
+        $mess = $_GET["mess"];
         // Get text sent
         $text = $mess;
         // Get replyToken

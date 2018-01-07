@@ -84,9 +84,12 @@ function getSubStrTH($string, $start, $length)
     $temp = '' ;
  
     for ($index = 1 ; $index < 6; $index++) {
-        $text = str_replace($search, '',$name[$index][1]);
-        $temp = $temp.((getStrLenTH($text) > 40) ? getSubStrTH($text, 0, 40)."..." : $text) ." ราคา : ".$val[$index][1].' บาท \n' ;
+		$text = str_replace($search, '',$name[$index][1]);
+		if($text != "")
+         $temp = $temp.((getStrLenTH($text) > 40) ? getSubStrTH($text, 0, 40)."..." : $text) ." ราคา : ".$val[$index][1].' บาท \n' ;
       }
-      
-    echo $temp;
+    if($temp != "")
+		echo $temp;
+	else
+	  	echo "ขออภัยไม่พบสินค้า"
 ?>

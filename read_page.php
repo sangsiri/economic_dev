@@ -14,7 +14,6 @@
     preg_match_all('/<h3 itemprop="name">(.+?)<\/h3>/', $productivity, $name, PREG_SET_ORDER);
     foreach ($name as $val) {
         echo "matched: " . $val[0] . "\n";
-        echo "part 1: " . $val[1] . "\n";
 
     }
 // The \\2 is an example of backreferencing. This tells pcre that

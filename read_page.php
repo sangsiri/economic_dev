@@ -14,7 +14,8 @@
     preg_match_all('/<h3 itemprop="name">(.+?)<\/h3>/', $productivity, $name, PREG_SET_ORDER);
     $count = 1 ;
     foreach ($name as $val) {
-        echo $val[1]."\n";
+        echo $val[1];
+        echo "\n";
         $count++;
         if($count > 5)
         break;

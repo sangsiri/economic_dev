@@ -13,17 +13,16 @@
     
     preg_match_all('/<h3 itemprop="name">(.+?)<\/h3>/', $productivity, $name, PREG_SET_ORDER);
     $count = 1 ;
+
+    $search  = array('<b>', '</b>');
+    $replace = '';
+
     foreach ($name as $val) {
-        echo $val[1];
-        echo "\n";
+        $text = str_replace($search, $replace,$val[1]);
+        echo  $text."\n";
         $count++;
         if($count > 5)
         break;
     }
-// The \\2 is an example of backreferencing. This tells pcre that
-// it must match the second set of parentheses in the regular expression
-// itself, which would be the ([\w]+) in this case. The extra backslash is
-// required because the string is in double quotes.
-
-
+   
 ?>

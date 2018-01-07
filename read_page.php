@@ -10,7 +10,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $productivity = curl_exec($ch);
 
+//preg_match("/<span id=\"yfs_l10_usdthb=x\".*span>/", $productivity, $name);
+preg_match("/<div class=\"info-detail visible-xs\".*</div>/", $productivity, $name);
 curl_close($ch);
-print_r($productivity);
+print_r($name);
 
 ?>

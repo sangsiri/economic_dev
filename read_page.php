@@ -78,17 +78,22 @@ function getSubStrTH($string, $start, $length)
     curl_close($ch);
     
     preg_match_all('/<h3 itemprop="name">(.+?)<\/h3>/', $productivity, $name, PREG_SET_ORDER);
+    preg_match_all('/<span itemprop="price" content="2590.0">(.+?)<\/span>/', $productivity, $val, PREG_SET_ORDER);
     $count = 1 ;
-
     $search  = array('<b>', '</b>');
     $temp = '' ;
 
-    foreach ($name as $val) {
+    for ($index = 0 ; $index < 5; $index ++) {
+        $text = str_replace($search, '',$name[index][1]);
+        $temp = $temp.((getStrLenTH($text) > 45) ? getSubStrTH($text, 0, 45)."..." : $text) ." ราคา : ".$val[index][1].' บาท \n' ;
+      }
+      
+    /*foreach ($name as $val) {
         $text = str_replace($search, '',$val[1]);
-        $temp = $temp.((getStrLenTH($text) > 50) ? getSubStrTH($text, 0, 50)."..." : $text) . '\n' ;
+        $temp = $temp.((getStrLenTH($text) > 45) ? getSubStrTH($text, 0, 45)."..." : $text) . '\n' ;
         $count++;
         if($count > 5)
         break;
-    }
+    }*/
     echo $temp;
 ?>

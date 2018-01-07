@@ -82,12 +82,13 @@ function getSubStrTH($string, $start, $length)
     $count = 1 ;
     $search  = array('<b>', '</b>');
     $temp = '' ;
-
-    for ($index = 0 ; $index < 5; $index ++) {
-        $text = str_replace($search, '',$name[index][1]);
-        $temp = $temp.((getStrLenTH($text) > 45) ? getSubStrTH($text, 0, 45)."..." : $text) ." ราคา : ".$val[index][1].' บาท \n' ;
+ 
+    for ($index = 1 ; $index < 6; $index++) {
+        $text = str_replace($search, '',$name[$index][1]);
+        $temp = $temp.((getStrLenTH($text) > 45) ? getSubStrTH($text, 0, 45)."..." : $text) ." ราคา : ".$val[$index][1].' บาท \n' ;
       }
       
+
     /*foreach ($name as $val) {
         $text = str_replace($search, '',$val[1]);
         $temp = $temp.((getStrLenTH($text) > 45) ? getSubStrTH($text, 0, 45)."..." : $text) . '\n' ;

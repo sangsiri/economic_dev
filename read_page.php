@@ -1,6 +1,6 @@
 <?php
 
-    $request = "อาหาร";
+    $request = $_REQUEST['search'];
     $urlWithoutProtocol = "https://www.priceza.com/search?productdataname=".$request ;
     $isRequestHeader = FALSE;
  

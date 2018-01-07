@@ -15,14 +15,14 @@
     $count = 1 ;
 
     $search  = array('<b>', '</b>');
-    $replace = '';
+    $temp = '' ;
 
     foreach ($name as $val) {
-        $text = str_replace($search, $replace,$val[1]);
-        echo  $text."<br>";
+        $text = str_replace($search, '',$val[1]);
+        $temp = $temp.$text."\n";
         $count++;
         if($count > 5)
         break;
     }
-   
+    echo $temp;
 ?>

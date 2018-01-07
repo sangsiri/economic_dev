@@ -14,7 +14,6 @@
     }
 
     echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
-    exit();
 
     if (!empty($bot->isEvents)) {
 		
@@ -26,6 +25,5 @@
         }
     
         echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
-        exit();
     
     }

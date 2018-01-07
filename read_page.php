@@ -19,7 +19,7 @@
 
     foreach ($name as $val) {
         $text = str_replace($search, $replace,$val[1]);
-        echo  $text."\n";
+        echo  $text."<br>";
         $count++;
         if($count > 5)
         break;

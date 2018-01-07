@@ -1,7 +1,5 @@
 <?php
 
-
-// Convert a string to an array with multibyte string
 function getMBStrSplit($string, $split_length = 1){
 	mb_internal_encoding('UTF-8');
 	mb_regex_encoding('UTF-8'); 

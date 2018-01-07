@@ -80,7 +80,7 @@ function getSubStrTH($string, $start, $length)
 	preg_match_all('/<h3 itemprop="name">(.+?)<\/h3>/', $productivity, $name, PREG_SET_ORDER);
     preg_match_all('/<span itemprop="price" content="(.+?)">/', $productivity, $val, PREG_SET_ORDER);
     $count = 1 ;
-    $search  = array('<b>', '</b>');
+    $search  = array("<b>","</b>");
     $temp = '' ;
  
     for ($index = 1 ; $index < 6; $index++) {

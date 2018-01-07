@@ -19,7 +19,7 @@
 
     foreach ($name as $val) {
         $text = str_replace($search, '',$val[1]);
-        $temp = $temp.substr($text, 0, 35).'\n';
+        $temp = $temp.substr($text, 0, 55).(strlen($text) > 55 ? "..." : '').'\n';
         $count++;
         if($count > 5)
         break;

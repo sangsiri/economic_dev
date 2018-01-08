@@ -3,25 +3,25 @@
     include 'vendor/autoload.php';
     include 'line-bot.php';
 
-    $bot = new BOT_API($channelSecret, $access_token);
+    $bota = new BOT_API($channelSecret, $access_token);
     $mess= $_REQUEST['mess'];
 
-    $bot->sendMessageNew($user_id,  $mess);
+    $bota->sendMessageNew($user_id,  $mess);
 
-    if ($bot->isSuccess()) {
+    if ($bota->isSuccess()) {
         echo 'ส่งข้อความเรียบร้อยแล้ว';
         exit();
     }
 
-    echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+    echo $bota->response->getHTTPStatus . ' ' . $bota->response->getRawBody(); 
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
 $logger = new Logger('LineBot');
-$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));/*
+$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);*/
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
 	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);

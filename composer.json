@@ -1,6 +1,7 @@
 {
     "require": {
         "linecorp/line-bot-sdk": "^2.3",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "monolog/monolog": "^1.23"
     }
 }

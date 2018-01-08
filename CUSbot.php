@@ -20,8 +20,8 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
 $logger = new Logger('LineBot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV[$access_token]);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV[$channelSecret]]);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV['"'.$access_token.'"']);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['"'.$channelSecret.'"']]);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
 	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);

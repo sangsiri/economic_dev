@@ -2,7 +2,7 @@
     include 'CUSbotConn.php';
     include 'vendor/autoload.php';
     include 'line-bot.php';
-/*
+
     $bota = new BOT_API($channelSecret, $access_token);
     $mess= $_REQUEST['mess'];
 
@@ -14,7 +14,7 @@
     }
 
     echo $bota->response->getHTTPStatus . ' ' . $bota->response->getRawBody(); 
-*/
+
     use Monolog\Logger;
     use Monolog\Handler\StreamHandler;
     use Monolog\Handler\FirePHPHandler;

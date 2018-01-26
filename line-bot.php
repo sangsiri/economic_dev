@@ -1,6 +1,5 @@
 <?php
 
-
     use \LINE\LINEBot;
     use \LINE\LINEBot\HTTPClient;
     use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -111,7 +110,7 @@ class BOT_API extends LINEBot {
         return json_decode($result);
 		
     }
-	
+    
 }
 
 ?>

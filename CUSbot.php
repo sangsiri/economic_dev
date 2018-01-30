@@ -1,7 +1,7 @@
 <?php
     include 'CUSbotConn.php';
     include 'vendor/autoload.php';
-
+    include 'line-bot.php';
     $bota = new BOT_API($channelSecret, $access_token);
     $mess= $_REQUEST['mess'];
 

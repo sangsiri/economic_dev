@@ -13,7 +13,7 @@
     }
 
     echo $bota->response->getHTTPStatus . ' ' . $bota->response->getRawBody(); 
-
+/*
     
     $logger = new Logger('LineBot');
     $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
@@ -99,7 +99,7 @@
             $response = $bot->replyMessage($event->getReplyToken(), $outputText);
         }
     }
-
+*/
 
 ?>
     
